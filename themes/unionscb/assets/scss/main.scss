@@ -1,0 +1,44 @@
+$primary: #fc5500;
+
+@import "../../node_modules/bootstrap/scss/bootstrap.scss";
+
+body {
+  background: url(/images/bg.png) repeat fixed;
+}
+
+.nav-item {
+  &:not(:last-child) {
+    border-right: 1px solid $gray-300;
+    padding-right: 0.5em;
+    margin-right: 0.5em;
+  }
+
+  .nav-link {
+    font-size: 1.2em;
+    color: $black;
+
+    @include hover-focus() {
+      color: rgba($black, .5)
+    }
+  }
+
+  &.active {
+    .nav-link{
+      color: $primary;
+    }
+  }
+}
+
+.float-left {
+  margin: 0 2em 1em 0;
+}
+
+.float-right {
+  margin: 0 0 1em 2em;
+}
+
+.float-left, .float-right {
+  @include media-breakpoint-down(sm) {
+    @include img-fluid();
+  }
+}

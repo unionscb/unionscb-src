@@ -1,0 +1,9 @@
+<img
+  {{ with .Get "float" }}
+    class="float-{{ . }}"
+  {{ end }}
+
+  src="{{ .Get "src" }}"
+  alt="{{ .Get "alt" }}"
+  width="{{ .Get "width" }}"
+>
