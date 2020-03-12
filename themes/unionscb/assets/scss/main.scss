@@ -2,17 +2,14 @@ $primary: #fc5500;
 
 @import "../../node_modules/bootstrap/scss/bootstrap.scss";
 
+@import "../../node_modules/@fortawesome/fontawesome-free/scss/fontawesome.scss";
+@import "../../node_modules/@fortawesome/fontawesome-free/scss/solid.scss";
+
 body {
   background: url(/images/bg.png) repeat fixed;
 }
 
 .nav-item {
-  &:not(:last-child) {
-    border-right: 1px solid $gray-300;
-    padding-right: 0.5em;
-    margin-right: 0.5em;
-  }
-
   .nav-link {
     font-size: 1.2em;
     color: $black;
