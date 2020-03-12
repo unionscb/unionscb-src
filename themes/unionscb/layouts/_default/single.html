@@ -6,9 +6,33 @@
       </div>
     </header>
     
-    <div class="bg-white py-5 shadow-sm">
+    <div class="bg-white py-5">
       <div class="container">
-        {{ .Content }}
+        <div class="row">
+          <div class="col-lg-4 order-lg-last mb-4">
+            {{ if .Parent.Params.sectionMenu }}
+            <ul class="nav nav-pills flex-column">
+              {{ $url := .URL }}
+
+              {{ range .Parent.Paginator.Pages }}
+              <li class="nav-item">
+                <a class="nav-link {{ if eq $url .URL }} active {{ end }}" href="{{ .Permalink }}">{{.Title}}</a>
+              </li>
+              {{ end }}
+            </ul>
+            {{ end }}
+          </div>
+
+          <div class="col-lg-8">
+            {{ with .Resources.GetMatch "illustration.jpg" }}
+              <img class="float-left" src="{{ . }}">
+            {{ end }}
+
+            {{ .Content }}
+          </div>
+        </div>
+
+
       </div>
     </div>
   </article>

@@ -1,0 +1,17 @@
+{{ define "main" }}
+  <header class="py-4">
+    <div class="container">
+      <h1>{{ .Title }}</h1>
+    </div>
+  </header>
+
+  <div class="bg-white py-5">
+    <div class="container">
+      <ul>
+        {{ range .Paginator.Pages }}
+          <li>{{.Title}}</li>
+        {{ end }}
+      </ul>
+    </div>
+  </div>
+{{ end }}

@@ -35,7 +35,43 @@ body {
 }
 
 .float-left, .float-right {
+  width: 50%;
+
   @include media-breakpoint-down(sm) {
+    width: auto;
     @include img-fluid();
+  }
+}
+
+.card-columns {
+  column-count: 1;
+
+  @include media-breakpoint-up(md) {
+    column-count: 2;
+  }
+
+  @include media-breakpoint-up(xl) {
+    column-count: 3;
+  }
+}
+
+a .card-title {
+  transition: color 0.3s;
+}
+
+a:hover .card-title {
+  color: $primary;
+}
+
+.card-img-overlay {
+  background-color: rgba(0, 0, 0, 0.3);
+  transition: background-color 0.3s;
+
+  &:hover {
+    background-color: rgba(0, 0, 0, 0.6);
+  }
+
+  .card-title {
+    color: $light;
   }
 }
