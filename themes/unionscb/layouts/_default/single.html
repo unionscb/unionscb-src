@@ -3,6 +3,9 @@
     <header class="py-4">
       <div class="container">
         <h1>{{ .Title }}</h1>
+        {{ with .Params.date }}
+          <p class="text-muted m-0">{{ .Format "2.01.2006" }}</p>
+        {{ end }}
       </div>
     </header>
     
@@ -11,15 +14,15 @@
         <div class="row">
           <div class="col-lg-4 order-lg-last mb-4">
             {{ if .Parent.Params.sectionMenu }}
-            <ul class="nav nav-pills flex-column">
-              {{ $url := .URL }}
+              <ul class="nav nav-pills flex-column">
+                {{ $url := .Permalink }}
 
-              {{ range .Parent.Paginator.Pages }}
-              <li class="nav-item">
-                <a class="nav-link {{ if eq $url .URL }} active {{ end }}" href="{{ .Permalink }}">{{.Title}}</a>
-              </li>
-              {{ end }}
-            </ul>
+                {{ range .Parent.Paginator.Pages }}
+                <li class="nav-item">
+                  <a class="nav-link {{ if eq $url .Permalink }} active {{ end }}" href="{{ .Permalink }}">{{.Title}}</a>
+                </li>
+                {{ end }}
+              </ul>
             {{ end }}
           </div>
 

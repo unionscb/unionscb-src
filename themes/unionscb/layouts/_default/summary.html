@@ -1,0 +1,22 @@
+<article class="card">
+  <div class="card-body">
+    <div class="row ">
+      {{ if .Params.illustration }}
+        <div class="col-md-4">
+          <a href="{{ .Permalink }}">
+            <img src="{{ .Permalink }}/illustration.jpg" class="card-img mb-3" alt="{{ .Title }}">
+          </a>
+        </div>
+      {{ end }}
+
+      <div class="col-md">
+        <a href="{{ .Permalink }}"><h3 class="card-title m-0">{{.Title}}</h3></a>
+        <p class="small text-muted card-text">{{ .Date.Format "2.01.2006" }}</p>
+
+        <div class="card-text">
+          {{ .Summary }}
+        </div>
+      </div>
+    </div>
+  </div>
+</article>

@@ -7,6 +7,8 @@
 
   <div class="bg-white py-5">
     <div class="container">
+      {{ .Content }}
+
       <div class="card-columns">
         {{ range .Paginator.Pages }}
             <a href="{{ .Permalink }}">

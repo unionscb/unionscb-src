@@ -9,20 +9,30 @@ body {
   background: url(/images/bg.png) repeat fixed;
 }
 
+header h1 {
+  text-shadow: 1px 1px 4px $gray-600;
+}
+
 .nav-item {
   .nav-link {
     font-size: 1.2em;
     color: $black;
 
     @include hover-focus() {
-      color: rgba($black, .5)
+      color: rgba($black, .5);
     }
   }
 
   &.active {
-    .nav-link{
+    .nav-link {
       color: $primary;
     }
+  }
+}
+
+.nav-pills {
+  .nav-link.active:hover {
+    color: $white;
   }
 }
 

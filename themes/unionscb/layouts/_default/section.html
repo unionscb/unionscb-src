@@ -7,11 +7,20 @@
 
   <div class="bg-white py-5">
     <div class="container">
-      <ul>
-        {{ range .Paginator.Pages }}
-          <li>{{.Title}}</li>
-        {{ end }}
-      </ul>
+      <div class="row">
+        <div class="col-lg-4 order-lg-last mb-4">
+        </div>
+
+        <div class="col-lg-8">
+          <ul class="list-unstyled">
+            {{ range .Paginator.Pages }}
+              <li class="mb-3">
+                {{ .Render "summary" }}
+              </li>
+            {{ end }}
+          </ul>
+        </div>
+      </div>
     </div>
   </div>
 {{ end }}
