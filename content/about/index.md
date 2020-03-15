@@ -1,6 +1,8 @@
 ---
 title: "О компании"
-menu: "main"
+menu:
+    main:
+        weight: 10
 ---
 
 {{< image float="left" src="about.jpg" >}}

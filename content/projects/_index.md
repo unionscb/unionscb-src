@@ -1,5 +1,7 @@
 ---
 title: "Проекты"
 type: previews
-menu: "main"
+menu:
+    main:
+        weight: 30
 ---

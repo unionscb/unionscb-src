@@ -1,4 +1,6 @@
 ---
 title: "Новости"
-menu: "main"
+menu:
+    main:
+        weight: 40
 ---

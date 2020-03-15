@@ -13,6 +13,23 @@ header h1 {
   text-shadow: 1px 1px 4px $gray-600;
 }
 
+.fas {
+  width: 30px;
+  text-align: center;
+}
+
+.jumbotron {
+  background: url(/images/jumbotron.jpg) center / cover;
+  min-height: 600px;
+  text-shadow: 4px 2px 10px white;
+
+  .container {
+    @include media-breakpoint-up(lg) {
+      padding-right: 30em;
+    }
+  }
+}
+
 .nav-item {
   .nav-link {
     font-size: 1.2em;

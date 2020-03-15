@@ -12,6 +12,8 @@
         </div>
 
         <div class="col-lg-8">
+          {{ template "_internal/pagination.html" . }}
+
           <ul class="list-unstyled">
             {{ range .Paginator.Pages }}
               <li class="mb-3">
@@ -19,6 +21,8 @@
               </li>
             {{ end }}
           </ul>
+
+          {{ template "_internal/pagination.html" . }}
         </div>
       </div>
     </div>

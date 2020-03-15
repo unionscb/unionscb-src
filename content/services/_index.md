@@ -2,6 +2,8 @@
 title: "Виды работ"
 type: previews
 sectionMenu: true
-menu: "main"
+menu:
+    main:
+        weight: 20
 ---
 
