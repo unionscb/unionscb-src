@@ -1,9 +1,9 @@
 $primary: #fc5500;
 
-@import "../../node_modules/bootstrap/scss/bootstrap.scss";
+@import "bootstrap/bootstrap.scss";
 
-@import "../../node_modules/@fortawesome/fontawesome-free/scss/fontawesome.scss";
-@import "../../node_modules/@fortawesome/fontawesome-free/scss/solid.scss";
+@import "fontawesome-free/fontawesome.scss";
+@import "fontawesome-free/solid.scss";
 
 body {
   background-color: $gray-400;
