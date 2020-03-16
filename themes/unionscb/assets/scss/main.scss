@@ -6,7 +6,7 @@ $primary: #fc5500;
 @import "../../node_modules/@fortawesome/fontawesome-free/scss/solid.scss";
 
 body {
-  background: url(/images/bg.png) repeat fixed;
+  background-color: $gray-400;
 }
 
 header h1 {
@@ -16,6 +16,11 @@ header h1 {
 .fas {
   width: 30px;
   text-align: center;
+}
+
+.header-contacts {
+  height: 2em;
+  background-color: $primary;
 }
 
 .jumbotron {
