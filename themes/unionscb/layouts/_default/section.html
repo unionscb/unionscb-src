@@ -1,0 +1,30 @@
+{{ define "main" }}
+  <header class="py-4">
+    <div class="container">
+      <h1>{{ .Title }}</h1>
+    </div>
+  </header>
+
+  <div class="bg-white py-5">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-4 order-lg-last mb-4">
+        </div>
+
+        <div class="col-lg-8">
+          {{ template "_internal/pagination.html" . }}
+
+          <ul class="list-unstyled">
+            {{ range .Paginator.Pages }}
+              <li class="mb-3">
+                {{ .Render "summary" }}
+              </li>
+            {{ end }}
+          </ul>
+
+          {{ template "_internal/pagination.html" . }}
+        </div>
+      </div>
+    </div>
+  </div>
+{{ end }}

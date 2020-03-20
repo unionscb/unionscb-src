@@ -1,0 +1,4 @@
+baseURL = "https://unionscb.github.io/"
+languageCode = "ru"
+title = "Союзспецстрой"
+theme = "unionscb"

@@ -1,0 +1,23 @@
+{{ define "main" }}
+  <article>
+    <header class="py-4">
+      <div class="container">
+        <h1>{{ .Title }}</h1>
+      </div>
+    </header>
+
+    <div class="bg-white py-5">
+      <div class="container">
+        {{ .Content }}
+
+        <div class="card-columns">
+          {{ range .Resources }}
+            <a href="{{ .Permalink }}" data-toggle="lightbox" data-gallery="project-gallery">
+              <img class="img-fluid mb-3" src="{{ .Permalink }}">
+            </a>
+          {{ end }}
+        </div>
+      </div>
+    </div>
+  </article>
+{{ end }}
