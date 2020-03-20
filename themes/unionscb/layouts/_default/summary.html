@@ -4,7 +4,9 @@
       {{ if .Params.illustration }}
         <div class="col-md-4">
           <a href="{{ .Permalink }}">
-            <img src="{{ .Permalink }}/illustration.jpg" class="card-img mb-3" alt="{{ .Title }}">
+            {{ $illustration := .Resources.GetMatch "illustration.jpg" }}
+            {{ $illustration := $illustration.Resize "400x" }}
+            <img src="{{ $illustration.Permalink }}" class="card-img mb-3" alt="{{ .Title }}">
           </a>
         </div>
       {{ end }}
