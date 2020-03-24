@@ -6,7 +6,8 @@ $primary: #fc5500;
 @import "fontawesome-free/solid.scss";
 
 body {
-  background-color: $gray-400;
+  background: $gray-400 url(/images/bg.png);
+  background-attachment: fixed;
 }
 
 header h1 {
