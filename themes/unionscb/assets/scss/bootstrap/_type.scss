@@ -109,11 +109,7 @@ mark,
 }
 
 // Blockquotes
-<<<<<<< HEAD
-.blockquote {
-=======
 blockquote {
->>>>>>> 38d4d1a3e2a993548693f74999f9da55ffb394ec
   margin-bottom: $spacer;
   @include font-size($blockquote-font-size);
 }
