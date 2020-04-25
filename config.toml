@@ -1,5 +1,4 @@
-baseURL = "https://unionscb.github.io/unionscb/"
+baseURL = "https://unionscb.ru/"
 languageCode = "ru"
 title = "Союзспецстрой"
 theme = "unionscb"
-publishDir = "docs"

@@ -28,7 +28,8 @@
 
           <div class="col-lg-8">
             {{ with .Resources.GetMatch "illustration.jpg" }}
-              <img class="float-left" src="{{ . }}">
+              {{ $illustration := .Resize "600x" }}
+              <img class="float-left" src="{{ $illustration.Permalink }}">
             {{ end }}
 
             {{ .Content }}

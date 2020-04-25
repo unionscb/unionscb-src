@@ -6,7 +6,12 @@ $primary: #fc5500;
 @import "fontawesome-free/solid.scss";
 
 body {
+<<<<<<< HEAD
   background-color: $gray-400;
+=======
+  background: $gray-400 url(/images/bg.png);
+  background-attachment: fixed;
+>>>>>>> 38d4d1a3e2a993548693f74999f9da55ffb394ec
 }
 
 header h1 {
@@ -18,13 +23,8 @@ header h1 {
   text-align: center;
 }
 
-.header-contacts {
-  height: 2em;
-  background-color: $primary;
-}
-
 .jumbotron {
-  background: url(images/jumbotron.jpg) center / cover;
+  background: url(/images/jumbotron.jpg) center / cover;
   min-height: 600px;
   text-shadow: 4px 2px 10px white;
 

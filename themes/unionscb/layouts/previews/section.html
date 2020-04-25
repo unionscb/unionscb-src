@@ -13,7 +13,9 @@
         {{ range .Paginator.Pages }}
             <a href="{{ .Permalink }}">
               <div class="card h-100">
-                <img src="{{ .Permalink }}illustration.jpg" class="card-img" alt="...">
+                {{ $illustration := .Resources.GetMatch "illustration.jpg" }}
+                {{ $illustration := $illustration.Resize "400x" }}
+                <img src="{{ $illustration.Permalink }}" class="card-img" alt="{{.Title}}">
 
                 <div class="card-img-overlay">
                   <h3 class="card-title">{{.Title}}</h3>
