@@ -12,8 +12,9 @@
 
         <div class="card-columns">
           {{ range .Resources }}
+            {{ $img := .Resize "400x" }}
             <a href="{{ .Permalink }}" data-toggle="lightbox" data-gallery="project-gallery">
-              <img class="img-fluid mb-3" src="{{ .Permalink }}">
+              <img class="img-fluid mb-3" src="{{ $img.Permalink }}">
             </a>
           {{ end }}
         </div>
