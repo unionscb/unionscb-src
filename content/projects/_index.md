@@ -1,5 +1,5 @@
 ---
-title: "Проекты"
+title: "Галерея"
 type: previews
 menu:
     main:
