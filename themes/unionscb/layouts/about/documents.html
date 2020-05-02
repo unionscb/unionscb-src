@@ -1,0 +1,58 @@
+{{ define "main" }}
+  <article>
+    <header class="py-4">
+      <div class="container">
+        <h1>{{ .Title }}</h1>
+        {{ with .Params.date }}
+          <p class="text-muted m-0">{{ .Format "2.01.2006" }}</p>
+        {{ end }}
+      </div>
+    </header>
+    
+    <div class="bg-white py-5">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-4 order-lg-last mb-4">
+            {{ if .Parent.Params.sectionMenu }}
+              <ul class="nav nav-pills flex-column">
+                {{ $url := .Permalink }}
+
+                {{ range .Parent.Paginator.Pages.ByWeight }}
+                <li class="nav-item">
+                  <a class="nav-link {{ if eq $url .Permalink }} active {{ end }}" href="{{ .Permalink }}">{{.Title}}</a>
+                </li>
+                {{ end }}
+              </ul>
+            {{ end }}
+          </div>
+
+          <div class="col-lg-8">
+            {{ .Content }}
+
+            {{ $resources := .Resources }}
+
+            <ul class="list-unstyled row">
+                {{ range .Params.documents }}
+                    {{ $preview := $resources.GetMatch (printf "previews/%s.png" .name) }}
+                    {{ $preview := $preview.Resize "400x" }}
+
+                    {{ $doc := $resources.GetMatch (printf "docs/%s.pdf" .name) }}
+
+                    <li class="col-md-4 text-center">
+                        <a href="{{ $doc.Permalink }}">
+                            <figure>
+                                <img class="img-fluid img-thumbnail" src="{{ $preview.Permalink }}">
+                                <figcaption>{{ .title }}</figcaption>
+                            </figure>
+                        </a>
+                    </li>
+                {{ end }}
+            </ul>
+          </div>
+        </div>
+
+
+      </div>
+    </div>
+  </article>
+{{ end }}

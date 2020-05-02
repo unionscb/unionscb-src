@@ -17,7 +17,7 @@
               <ul class="nav nav-pills flex-column">
                 {{ $url := .Permalink }}
 
-                {{ range .Parent.Paginator.Pages }}
+                {{ range .Parent.Paginator.Pages.ByWeight }}
                 <li class="nav-item">
                   <a class="nav-link {{ if eq $url .Permalink }} active {{ end }}" href="{{ .Permalink }}">{{.Title}}</a>
                 </li>
