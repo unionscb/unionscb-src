@@ -32,7 +32,7 @@
             {{ $resources := .Resources }}
 
             <ul class="list-unstyled row">
-                {{ range .Params.documents }}
+                {{ range .Params.main }}
                     {{ $preview := $resources.GetMatch (printf "previews/%s.png" .name) }}
                     {{ $preview := $preview.Resize "400x" }}
 
@@ -47,6 +47,46 @@
                         </a>
                     </li>
                 {{ end }}
+            </ul>
+
+            <h2>Рекомендательные письма</h2>
+
+            <ul class="list-unstyled row">
+              {{ range .Params.letters }}
+                  {{ $preview := $resources.GetMatch (printf "previews/%s.png" .name) }}
+                  {{ $preview := $preview.Resize "400x" }}
+
+                  {{ $doc := $resources.GetMatch (printf "docs/%s.pdf" .name) }}
+
+                  <li class="col-md-4 text-center">
+                      <a href="{{ $doc.Permalink }}">
+                          <figure>
+                              <img class="img-fluid img-thumbnail" src="{{ $preview.Permalink }}">
+                              <figcaption>{{ .title }}</figcaption>
+                          </figure>
+                      </a>
+                  </li>
+              {{ end }}
+            </ul>
+
+            <h2>Благодарности</h2>
+
+            <ul class="list-unstyled row">
+              {{ range .Params.gratidute }}
+                  {{ $preview := $resources.GetMatch (printf "previews/%s.png" .name) }}
+                  {{ $preview := $preview.Resize "400x" }}
+
+                  {{ $doc := $resources.GetMatch (printf "docs/%s.pdf" .name) }}
+
+                  <li class="col-md-4 text-center">
+                      <a href="{{ $doc.Permalink }}">
+                          <figure>
+                              <img class="img-fluid img-thumbnail" src="{{ $preview.Permalink }}">
+                              <figcaption>{{ .title }}</figcaption>
+                          </figure>
+                      </a>
+                  </li>
+              {{ end }}
             </ul>
           </div>
         </div>
